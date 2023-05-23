@@ -1,7 +1,6 @@
 package br.com.fiap.entidades;
 
 public class Mensagem {
-	private int idMensagem;
 	private String mensagem;
 	private MensagemStatus mensagemStatus;
 	
@@ -10,13 +9,7 @@ public class Mensagem {
 		SUGESTAO
 	}
 
-	public int getIdMensagem() {
-		return idMensagem;
-	}
 
-	public void setIdMensagem(int idMensagem) {
-		this.idMensagem = idMensagem;
-	}
 
 	public String getMensagem() {
 		return mensagem;
@@ -34,5 +27,9 @@ public class Mensagem {
 		this.mensagemStatus = mensagemStatus;
 	}
 	
-	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return getMensagemStatus()+ " - " +getMensagem();
+	}
 }
