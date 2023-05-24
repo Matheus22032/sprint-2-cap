@@ -22,7 +22,7 @@ public class Aplicacao {
 			System.out.println("");
 			System.out.println("Deseja enviar um mensagem para a fila de espera para escrita no banco de dados ? (1)");
 			System.out.println("Deseja escrever uma mensagem no banco de dados ? (2)");
-			System.out.println("Deseja escrever todas as mesnagens da fila no banco de dados ? (3)");
+			System.out.println("Deseja escrever todas as mensagens da fila no banco de dados ? (3)");
 			System.out.println("Deseja encerrar o programa ? (4)");
 			opcao = input.nextInt();
 			switch (opcao) {
@@ -75,14 +75,14 @@ public class Aplicacao {
 
 	public static void enviarParaFila(FilaEncadeada fila, Scanner input) {
 		Mensagem msg = new Mensagem();
-		int avalicao = 0;
+		int avaliacao = 0;
 		input.nextLine();
 		System.out.print("Digite a mensagem :");
 		msg.setMensagem(input.nextLine());
-		while (avalicao == 0) {
+		while (avaliacao == 0) {
 			System.out.println("Digite o tipo da mensagem (1- Reclamação/2- Sugestão)");
-			avalicao = input.nextInt();
-			switch (avalicao) {
+			avaliacao = input.nextInt();
+			switch (avaliacao) {
 			case 1: {
 				msg.setMensagemStatus(MensagemStatus.RECLAMACAO);
 				break;
@@ -93,7 +93,7 @@ public class Aplicacao {
 			}
 			default:
 				System.out.println("Opção invalida");
-				avalicao = 0;
+				avaliacao = 0;
 				break;
 			}
 		}
